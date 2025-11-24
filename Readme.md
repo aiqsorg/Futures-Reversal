@@ -14,6 +14,8 @@ Take for instance a 5 minute timeframe which has twice the amount of data as the
 
 These signals have maxima that can be detected in though scipy, and the time periods in which these maxima occur on the composite signals can be projected back onto the original price data for actual price information, and the distance between the component maxima and minima can be integrated between to measure magnitude of jumps that is representative across time frames. These integrals can be normalized and classified to where a relatively big jump across other jumps.
 
+Another point of confusion to clarify is that these extrema are time discrete and depending on which composite signals chosen or how they are constructed they may appear differently, and their spacing is independent of time, as they are simply projected maxima and minima from the composite signal.
+
 ### Normalization Considerations
 
 However there is another circumstance to consider, which is the original price data also must be normalized because if not, an integral would capture more about the price levels at a particular time period than the pure shape of the jump. But in forward testing, normalization would require the whole prices be constantly adjusted based on the new prices. So it is reasonable thus that with a large amount of historical data, the forward testing could just use a linear regression to assign normalization values from the historicals (possibly a 1 year period) which could be updated at the end of a trading day on a rolling bases.
