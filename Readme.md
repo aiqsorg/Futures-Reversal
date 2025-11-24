@@ -26,7 +26,7 @@ But back to the 75/25 composite that will give us an initial jump to view, and w
 
 ### Current Algorithm Structure
 
-The implementation creates two different composite signals for different purposes. The first is a 40/60 composite from 1-minute timeframes for bounded resistance detection, where we merge 1min, 5min, 10min, 15min, and 30min data using the progressive weighted averaging approach. The second is a 50/50 composite from 5-minute timeframes for reversal detection, merging 5min, 10min, 15min, 30min, and 60min data.
+The implementation creates two different composite signals for different purposes. The first is a 40/60 composite from 1-minute timeframes for bounded resistance detection, where we merge 1min, 5min, 10min, 15min, and 30min data using the progressive weighted averaging approach. The second is a 75/25 composite from 5-minute timeframes for reversal detection, merging 5min, 10min, 15min, 30min, and 60min data.
 
 The algorithm finds turning points in both composites using scipy peak detection, then calculates momentum integrals on the original 1-minute normalized data using the turning points from the 40/60 composite. We filter out extreme outliers with Z-scores greater than 15 to prevent skewing, then recalculate Z-scores on the filtered data to find statistically significant jumps.
 
